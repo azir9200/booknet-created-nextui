@@ -14,22 +14,39 @@ export const siteConfig = {
       href: "/blog",
     },
     {
+      label: "Latest",
+      href: "/latest",
+    },
+    {
       label: "About",
       href: "/about",
-    },
-  ],
-  navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
     },
     {
       label: "Dashboard",
       href: "/dashboard",
     },
+  ],
+  navMenuItems: [
     {
-      label: "Settings",
-      href: "/settings",
+      label: "Home",
+      href: "/",
+    },
+
+    {
+      label: "Blog",
+      href: "/blog",
+    },
+    {
+      label: "Latest",
+      href: "/latest",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
+      label: "Dashboard",
+      href: "/dashboard",
     },
 
     {

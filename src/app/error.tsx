@@ -1,31 +1,27 @@
 "use client";
-
-import { useEffect } from "react";
-
-export default function Error({
+const ErrorPage = ({
   error,
   reset,
 }: {
-  error: Error;
+  error: Error & { digest?: string };
   reset: () => void;
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    /* eslint-disable no-console */
-    console.error(error);
-  }, [error]);
-
+}) => {
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <div className="mt-10  text-center">
+      <p className="text-4xl bg-red-500 text-white p-5 w-[50%] mx-auto rounded-xl">
+        Something went wrong!!!
+      </p>
+      <p className="text-4xl bg-red-500 text-white p-5 w-[50%] mx-auto rounded-xl mt-2">
+        {error.message}
+      </p>
       <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        onClick={() => reset()}
+        className="btn btn-error btn-outline mt-5"
       >
-        Try again
+        Try Again
       </button>
     </div>
   );
-}
+};
+
+export default ErrorPage;
