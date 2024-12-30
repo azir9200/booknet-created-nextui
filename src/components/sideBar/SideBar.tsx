@@ -22,7 +22,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
             <Link href="/">🏡Home</Link>
           </li>
           <li className="bg-fuchsia-200 rounded">
-            <Link href={"/dashboard/create-post"}>📝Create a Post</Link>
+            <Link href={"/dashboard/profile"}>📝Profile</Link>
           </li>
         </ul>
       </div>

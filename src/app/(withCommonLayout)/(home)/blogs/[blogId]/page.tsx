@@ -1,30 +1,21 @@
-import BlogDetails from "@/src/components/latestBlog/BlogDetails";
-import Blog from "@/src/types";
+import PostDetails from "@/src/components/ui/posts/PostDetails";
+import { getPost } from "@/src/services/PostServices";
 
-interface BlogId {
+type TProps = {
   params: {
-    blogId: string;
+    postId: string;
   };
-}
-export const generateStaticParams = async () => {
-  const res = await fetch("http://localhost:3001/blogs");
-
-  const blogs = await res.json();
-
-  return blogs.slice(0, 3).map((blog: Blog) => ({ blogId: blog.id }));
 };
 
-const BlogDetailPage = async ({ params }: BlogId) => {
-  const res = await fetch(`http://localhost:3001/blogs/${params.blogId}`, {
-    cache: "no-store",
-  });
-  const blog = await res.json();
+const PostDetailPage = async ({ params }: TProps) => {
+  const posts = await getPost(params.postId);
+  console.log("post details", posts);
 
   return (
     <div className="my-10">
-      <BlogDetails blog={blog} />
+      <PostDetails post={posts} />
     </div>
   );
 };
 
-export default BlogDetailPage;
+export default PostDetailPage;

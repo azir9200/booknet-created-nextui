@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "server": "json-server --watch db.json --port 3001",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -24,6 +23,8 @@
     "@react-aria/ssr": "3.9.4",
     "@react-aria/visually-hidden": "3.8.12",
     "@reduxjs/toolkit": "^2.4.0",
+    "@types/next-auth": "^3.15.0",
+    "@types/redux-persist": "^4.3.1",
     "clsx": "2.1.1",
     "framer-motion": "~11.1.1",
     "intl-messageformat": "^10.5.0",

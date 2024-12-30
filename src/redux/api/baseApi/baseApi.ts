@@ -1,14 +1,23 @@
-// Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const baseApi = createApi({
-  reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001" }),
-  endpoints: (builder) => ({
-    getBlogs: builder.query({
-      query: () => "/blogs",
-    }),
-  }),
-});
+import { RootState } from "../../store";
 
-export const { useGetBlogsQuery } = baseApi;
+export const baseApi = createApi({
+  reducerPath: "baseApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:5000/api",
+    //  baseUrl: "https://better-manage-project.vercel.app",
+
+    credentials: "include",
+    prepareHeaders: (headers, { getState }) => {
+      const token = (getState() as RootState).user.token;
+
+      if (token) {
+        headers.set("authorization", `${token}`);
+      }
+
+      return headers;
+    },
+  }),
+  endpoints: () => ({}),
+});

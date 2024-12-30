@@ -1,16 +1,11 @@
 /* eslint-disable @next/next/no-async-client-component */
 
 import BlogCard from "@/src/components/latestBlog/BlogCard";
-import { useGetBlogsQuery } from "@/src/redux/api/baseApi/baseApi";
+import { getAllPosts } from "@/src/services/PostServices";
 import Blog from "@/src/types";
 
 const BlogPage = async () => {
-  const res = await fetch("http://localhost:3001/blogs", {
-    cache: "no-store",
-  });
-  const blogs = await res.json();
-
-  // const { data: blogs, isLoading, error } = useGetBlogsQuery(undefined);
+  const { data: blogs } = await getAllPosts();
 
   return (
     <div className="w-[90%] mx-auto my-5 ">
@@ -32,4 +27,5 @@ const BlogPage = async () => {
     </div>
   );
 };
+
 export default BlogPage;

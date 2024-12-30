@@ -3,7 +3,7 @@
 import Blog from "../types";
 
 const createBlog = async (data: Blog) => {
-  const res = await fetch(" http://localhost:3001/blogs", {
+  const res = await fetch(" http://localhost:5000/post", {
     method: "POST",
     headers: {
       "Content-type": "application/json",

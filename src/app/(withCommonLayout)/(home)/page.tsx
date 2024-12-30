@@ -1,14 +1,15 @@
-import LatestBlog from "@/src/components/latestBlog/LatestBlog";
 import Banner from "@/src/components/shared/Banner";
+import LatestPosts from "@/src/components/ui/posts/latestPosts";
+import { getAllPosts } from "@/src/services/PostServices";
 
 const HomePage = async () => {
-  const res = await fetch("http://localhost:3001/blogs");
-  const blogs = await res.json();
+  const posts = await getAllPosts("isr");
+  console.log("Home page", posts);
 
   return (
     <div>
       <Banner />
-      <LatestBlog blogs={blogs} />
+      <LatestPosts posts={posts} />
     </div>
   );
 };

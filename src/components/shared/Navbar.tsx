@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-sort-props */
 import Image from "next/image";
 import Link from "next/link";
 // import brandLogo from "../../assets/logo.png";
@@ -67,10 +68,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <Link
-          href="/blogs/create"
+          href="/login"
           className="btn btn-accent text-white rounded-full px-5"
         >
-          Post Blog
+          Login
         </Link>
       </div>
     </div>
