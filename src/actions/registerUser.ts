@@ -12,5 +12,6 @@ export const registerUser = async (data: UserData) => {
     cache: "no-store",
   });
   const userinfo = await res.json();
+  
   return userinfo;
 };

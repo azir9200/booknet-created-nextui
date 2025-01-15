@@ -1,12 +1,6 @@
-// export default function layout({ children }: { children: React.ReactNode }) {
-//   return (
-//     <div className="relative flex flex-col h-screen">
-//       <main>{children}</main>
-//     </div>
-//   );
-// }
 
 import Navbar from "@/src/components/shared/Navbar";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

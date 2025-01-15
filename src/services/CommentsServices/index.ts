@@ -9,9 +9,5 @@ export const getCommentsById = async (postId: string, wait = false) => {
     throw new Error("Failed to fetch comments data");
   }
 
-//   if (wait) {
-//     delay(2000);
-//   }
-
   return res.json();
 };
